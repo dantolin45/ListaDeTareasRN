@@ -1,0 +1,56 @@
+.navbar{
+    display: flex;
+    position:sticky;
+    width:100vw;
+    height: 100px;
+    background: linear-gradient(90deg, rgb(255 255 255) 0%, rgb(227 227 227) 20%, rgb(169 45 45) 63%, rgb(193 0 0) 100%);
+    transition: 0.5 ease-in-out;
+}
+
+
+
+
+.container{
+    display:block;
+}
+
+.navbar-nav{
+    display:flex;
+    width:auto;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nav-item{
+    display: inline-flex;
+    margin:  6px ;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link{
+    color: rgb(193 0 0);
+    text-decoration: solid;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+    text-align: center;
+    font-size: 22px;
+    transition: 0.5 ease-in-out;
+}
+.nav-item :hover{
+    transition: ease-in-out;
+    color: #c2c2c2;
+}
+
+.image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
+}
