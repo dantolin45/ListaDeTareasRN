@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from "react";
 
-import  {getRecipe}  from "../api/Api";
+import  { getRecipe }  from "../api/Api";
 
 const RecipesList = () => {
     const [recipes, setRecipes] = useState([]);

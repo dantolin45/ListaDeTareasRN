@@ -28,27 +28,7 @@ const ModalAddTask = ({ onAddTask }) => {
         Agregar Tarea        
         </button>
 
-        <div class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form className="add-form" onSubmit={onSubmit}>
-                        <div className="form-control">
-                            <label>Tarea</label>
-                            <input type="text" placeholder="Agrega una tarea" value={task} onChange={(e) => setTask(e.target.value)} />
-                        </div>
-                        <div className="form-control">
-                            <label>Día y Hora</label>
-                            <input type="text" placeholder="Agrega un día y hora" value={day} onChange={(e) => setDay(e.target.value)} />
-                        </div>
-                        <div className="form-control form-control-check">
-                            <label>Recordatorio</label>
-                            <input type="checkbox" checked={reminder} value={reminder} onChange={(e) => setReminder(e.currentTarget.checked)} />
-                        </div>
-                        <input type="submit" value="Guardar Tarea" className="btn btn-block" />
-                    </form>
-                </div>
-            </div>
-        </div>
+
         </>
     )
 }
