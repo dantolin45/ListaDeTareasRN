@@ -1,8 +1,8 @@
 import { Modal } from "bootstrap";
 import React, { useState } from "react";
-import ModalAddTask from "./ModalAddTask";
+import ModalAddRecipe from "./ModalAddRecipe";
 import ToDoList from "./ToDoList";
-
+import '../../styles/MainToDo.css'
 const Main = () => {
 
 
@@ -15,7 +15,7 @@ const Main = () => {
             </div>
             
             <div className="addtask-container">
-            <ModalAddTask/>
+            <ModalAddRecipe/>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import react from "react";
-import RecipesList from "../components/recipes/RecipesList";
+import RecipesList from "../components/RecipesList";
 
 const Recipes =()=>{
 

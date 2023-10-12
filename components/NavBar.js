@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../../styles/NavBar.css';
-import motherfuckingrecipes from '../../assets/android-chrome-512x512.png';
+import '../styles/NavBar.css';
+import motherfuckingrecipes from '../assets/android-chrome-512x512.png';
 
     
 const Navbar = () => {

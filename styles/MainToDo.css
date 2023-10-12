@@ -1,5 +1,19 @@
 .container-listrecipes{
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    align-items: center;
+}
+.todolist-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.addtask-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

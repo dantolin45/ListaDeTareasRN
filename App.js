@@ -3,9 +3,9 @@ import { View } from 'react-native';
 import React,{useState, useEffect} from "react";
 import {BrowserRouter,Routes, Route, Switch, Link} from "react-router-dom";
 import Recipes from './pages/Recipes.js';
-import Navbar from './components/navbar/NavBar';
-import Main from './components/todolist/Main'
-
+import Navbar from './components/NavBar.js';
+import Main from './components/todolist/MainRecipes.js'
+import './App.css'
 
 export default function App() {
   return (
