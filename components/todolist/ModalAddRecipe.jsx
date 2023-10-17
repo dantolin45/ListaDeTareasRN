@@ -4,6 +4,8 @@ import Modal from 'react-native-modal';
 import { Button, Text, View } from "react-native";
 import '../../styles/ModalAddRecipe.css'
 import FormikAddRecipe from "./FormikAddRecipe";
+
+
 const ModalAddRecipe = () => {
 
 
@@ -12,19 +14,20 @@ const ModalAddRecipe = () => {
     const handleShow = () => setShow(true);
 
     const handleClose = () => setShow(false);
-
+    
 
     return (
         <>
 
-            <Button variant="primary" title=" Añadir nueva receta" className="userItem " onPress={handleShow} />
-            <FormikAddRecipe/>
+            <button variant="primary" title=" Añadir nueva receta" className="userItem" onClick={handleShow}><b className="b-button-recipe">Añadir receta</b></button>
+            
             <Modal isVisible={show}>
-                <View style={{ flex: 1 }}>
+                
+                <View >
                      <FormikAddRecipe/>
+                    
 
-
-                    <Button variant="primary" title="Cerrar" className="userItem" onPress={handleClose} />
+                    <button  className="userItem" onClick={handleClose}> <b className="b-button-recipe">Cerrar</b> </button>
                 </View>
             </Modal>
 
