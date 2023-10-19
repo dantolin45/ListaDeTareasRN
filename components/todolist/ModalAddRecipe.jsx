@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import Modal from 'react-native-modal';
-import { Button, Text, View } from "react-native";
+import { View } from "react-native";
 import '../../styles/ModalAddRecipe.css'
 import FormikAddRecipe from "./FormikAddRecipe";
 
@@ -24,7 +24,7 @@ const ModalAddRecipe = () => {
             <Modal isVisible={show}>
                 
                 <View >
-                     <FormikAddRecipe/>
+                    <FormikAddRecipe/>
                     
 
                     <button  className="userItem" onClick={handleClose}> <b className="b-button-recipe">Cerrar</b> </button>

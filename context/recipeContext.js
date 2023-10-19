@@ -1,16 +1,12 @@
-import React,{ useContext, createContext, useState} from "react";
+import React, { useContext, createContext, useState } from "react";
 
 const recipeCreated = createContext();
 
-export const useRecipeCreatedContext =() =>{
-    return useContext(recipeCreated);
-}
-
-export const RecipeProvider =({ children })=>{
+export const RecipeContext = ({ children }) => {
 
     const [recipe, setRecipe] = useState([]);
 
-    const AddRecipe =(e)=>{
+    const AddRecipe = (e) => {
         console.log("AddRecipe", e)
         setRecipe(
             ...recipe,
@@ -20,21 +16,25 @@ export const RecipeProvider =({ children })=>{
         window.localStorage.setItem('RecipeTitle', e.title)
         window.localStorage.setItem('RecipeURLImage', e.image)
         console.log("AddRecipe", recipe)
-    }
+    };
 
-    const RemoveRecipeBySelected = (e)=>{
+    const RemoveRecipeBySelected = (e) => {
         const idExist = window.localStorage.getItem('idRecipe', e.id)
-        if (idExist != 0)
-        {
+        if (idExist != 0) {
             setRecipe(null);
             window.localStorage.removeItem('idRecipe', e.id)
             window.localStorage.removeItem('RecipeTitle')
             window.localStorage.removeItem('RecipeURLImage')
         }
 
-        
-    }
-    return <RecipeProvider.Provider value={{AddRecipe, recipe}}>
+
+    };
+    return (
+    <RecipeContext.Provider value={{ recipe, AddRecipe }}>
         {children}
-    </RecipeProvider.Provider>
+    </RecipeContext.Provider>);
+};
+
+export const useRecipeCreatedContext = () => {
+    return useContext(recipeCreated);
 }

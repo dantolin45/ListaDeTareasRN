@@ -13,7 +13,9 @@ const FormikAddRecipe = () => {
     //     { key: 2, value: 'png', text: 'PNG' },
     //     { key: 3, value: 'svg', text: 'SVG' }
     // ]
+
     const context= useRecipeCreatedContext();
+    console.log(context)
     const schema = Yup.object().shape({
 
         title: Yup.string()
@@ -31,8 +33,7 @@ const FormikAddRecipe = () => {
         validationSchema: schema,
         onSubmit : async (values) => {
             await new Promise((r) => setTimeout(r, 500));
-            alert(values.id + values.title + values.image);
-            
+            alert(JSON.stringify(values, null, 2));
             context.AddRecipe(values);
         }
     
