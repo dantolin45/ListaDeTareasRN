@@ -6,6 +6,8 @@ import Navbar from './components/NavBar.js';
 import Main from './pages/MainRecipes.js'
 import { RecipeContext } from './context/recipeContext.js';
 import './App.css'
+import ToDoList from './components/todolist/ToDoList.js';
+
 
 export default function App() {
 
@@ -17,8 +19,8 @@ export default function App() {
           <Navbar />
 
           <Routes>
-            <Route path="/" element={""} />
-            <Route path="/recetas" element={<Recipes />} />
+            <Route path="/" element={<ToDoList/>} />
+            <Route path="/recetas" element={<Recipes/>} />
             <Route path="/listatareas" element={<Main />} />
           </Routes>
 

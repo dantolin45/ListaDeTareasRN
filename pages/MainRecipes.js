@@ -10,7 +10,7 @@ const Main = () => {
 
             <div className="todolist-container">
                 <h1>Lista de recetas hechas</h1>
-                <ToDoList />
+            
             </div>
             
             <div className="addtask-container">
