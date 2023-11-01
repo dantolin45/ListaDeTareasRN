@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 import { getRecipe } from "../components/api/Api";
 import '../styles/RecipeList.css'
 
@@ -22,11 +22,13 @@ const Recipes = () => {
             <div className="cards">
 
                 {recipesApi?.map((recipes) => (
+                    <Link to="">
                     <div className="card">
                         <h3 className="card-title" key={recipes.id}>{recipes.title} </h3>
                         <img className="image" src={recipes.image} />
 
                     </div>
+                    </Link>
                 ))}
 
             </div>
