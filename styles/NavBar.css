@@ -64,3 +64,10 @@
   ::marker{
     font-size: 0;
   }
+  .navbar-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+  }
+  

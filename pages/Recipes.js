@@ -22,7 +22,7 @@ const Recipes = () => {
             <div className="cards">
 
                 {recipesApi?.map((recipes) => (
-                    <Link to="">
+                    <Link to={`/recipeDetail/${recipes.title}`}>
                     <div className="card">
                         <h3 className="card-title" key={recipes.id}>{recipes.title} </h3>
                         <img className="image" src={recipes.image} />
