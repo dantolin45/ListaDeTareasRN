@@ -4,22 +4,17 @@ import '../styles/RecipesDetail.css'
 const RecipeDetail = (recipeURL) => {
 
     const recipe = recipeURL.recipe;
-    console.log(recipe.title)
+    
     return (
         <>
             <div className="page">
                 <div className="containerPage">
-                    <div className="ProductDetailContainer">
-                        <div className="ProductDetail">
+                    <div className="RecipeDetailContainer">
+                        <div className="RecipeDetail">
                             <h1 className="recipeTitle">{recipe.title}</h1>
-
-
-                            <img className="sizeTitle" src={recipe.image} />
-
+                            <img className="recipeImage" src={recipe.image} />
+                            <span className="recipeDescription">{recipe.description}</span>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>

@@ -1,32 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { getRecipe } from "../components/api/Api";
+import recipes from "../json/jsonRecipes";
 import '../styles/RecipeList.css'
 
 const Recipes = () => {
 
+    console.log(recipes)
+    
 
-    const [recipesApi, setRecipesApi] = useState([]);
-
-    useEffect(() => {
-
-        getRecipe().then((data) => {
-            setRecipesApi(data.results);
-
-        })
-        console.log(recipesApi)
-    }, []);
 
     return (
         <div className="container">
             <div className="cards">
-
-                {recipesApi?.map((recipes) => (
-                    <Link to={`/recipeDetail/${recipes.title}`}>
+                {recipes?.map((recipe) => (
+                    <Link to={`/recipeDetail/${recipe.title}`}>
                     <div className="card">
-                        <h3 className="card-title" key={recipes.id}>{recipes.title} </h3>
-                        <img className="image" src={recipes.image} />
-
+                        <h3 className="card-title" key={recipe.id}>{recipe.title} </h3>
+                        <img className="image" src={recipe.image} />
                     </div>
                     </Link>
                 ))}
