@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import '../styles/UserLogin.css'
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useUserContext } from "../context/UserContext";
-
+import { useUserFunctions } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 const LogIn = () => {
 
-    const context = useUserContext();
-
+    const context = useUserFunctions();
+    const navigate = useNavigate();
     const SignupSchema = Yup.object().shape({
         name: Yup.string()
             .max(15, 'Must be 15 characters or less')
@@ -18,7 +18,22 @@ const LogIn = () => {
             .min(8, "La contraseña debe de constar de al menos 8 caracteres"),
 
     });
-
+    function isLogged(){
+        if(context.Logged === true)
+        {
+            alert("Te has logeado")
+            navigate("/")
+        }
+        else{
+            
+            navigate("/userlogin")
+        }
+    }
+    useEffect(()=>{
+        isLogged()
+    },[context.Logged])
+   
+   
 
     return (
         <>
@@ -39,9 +54,8 @@ const LogIn = () => {
                                         validationSchema={SignupSchema}
                                         onSubmit={async (values) => {
                                             await new Promise((r) => setTimeout(r, 500));
-                                            alert("Bienvenido " + values.name + " !");
+                                            context.setUserFormik(values);
 
-                                            context.changueUser(values);
                                         }}
                                     >
 

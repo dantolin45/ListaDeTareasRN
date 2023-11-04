@@ -13,31 +13,34 @@ import LogIn from './pages/LogIn.js';
 import Home from './pages/Home.js';
 export default function App() {
 
-  console.log(recipes)
   return (
+    <UserProvider>
+      <RecipeContext>
 
-      <View >
+        <View >
 
-        <BrowserRouter>
+          <BrowserRouter>
 
-          <Navbar />
+            <Navbar />
 
-          <Routes>
-            {recipes.map((recipesURL) => {
-              return (<Route path={`/recipeDetail/${recipesURL.title}`} element={<RecipeDetail recipe={recipesURL} />} />)
-            })
+            <Routes>
+              {recipes.map((recipesURL) => {
+                return (<Route path={`/recipeDetail/${recipesURL.title}`} element={<RecipeDetail recipe={recipesURL} />} />)
+              })
 
-            }
-            <Route path="/" element={<Home />} />
-            <Route path="/recetas" element={<Recipes />} />
-            <Route path="/listatareas" element={<Main />} />
-            <Route path="/userlogin" element={<LogIn />} />
-          </Routes>
+              }
+              <Route path="/" element={<Home />} />
+              <Route path="/recetas" element={<Recipes />} />
+              <Route path="/listatareas" element={<Main />} />
+              <Route path="/userlogin" element={<LogIn />} />
+            </Routes>
 
-        </BrowserRouter>
+          </BrowserRouter>
 
-      </View>
+        </View>
 
+      </RecipeContext>
+    </UserProvider>
   );
 }
 
