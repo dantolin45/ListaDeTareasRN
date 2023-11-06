@@ -11,6 +11,7 @@ import { RecipeContext } from './context/recipeContext.js';
 import RecipeDetail from './pages/RecipesDetail.js';
 import LogIn from './pages/LogIn.js';
 import Home from './pages/Home.js';
+import { Search } from 'semantic-ui-react';
 export default function App() {
 
   return (
@@ -33,6 +34,7 @@ export default function App() {
               <Route path="/recetas" element={<Recipes />} />
               <Route path="/listatareas" element={<Main />} />
               <Route path="/userlogin" element={<LogIn />} />
+              <Route path={`/search?=`} element={<Search />} />
             </Routes>
 
           </BrowserRouter>
