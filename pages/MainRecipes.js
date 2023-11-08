@@ -1,6 +1,6 @@
 import React from "react";
 import ModalAddRecipe from "../components/todolist/ModalAddRecipe";
-import ToDoList from "../components/todolist/ToDoList";
+import ToDoListRemove from "../components/todolist/ToDoListRemove";
 import { useUserFunctions } from "../context/UserContext";
 import '../styles/MainToDo.css'
 import HaveToLogin from "../components/HaveToLogin";
@@ -9,7 +9,7 @@ const Main = () => {
     const loggedcontext = useUserFunctions();
     function isLogged() {
         console.log(loggedcontext.Logged)
-        if (loggedcontext.Logged === false) {
+        if (loggedcontext.Logged === true) {
 
             return (<><HaveToLogin /></>)
         }
@@ -19,8 +19,8 @@ const Main = () => {
                 <div className="mainrecipesContainer">
 
                     <div className="todolist-container">
-                        <h1 className="todolist-h1">Lista de recetas hechas</h1>
-
+                        <h1 className="todolist-h1">Remover recetas</h1>
+                        <ToDoListRemove />
                     </div>
 
                     <div className="addtask-container">

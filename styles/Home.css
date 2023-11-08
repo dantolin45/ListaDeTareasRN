@@ -58,18 +58,19 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
 .module {
     width: 250px;
     margin: 0 0 1em 0;
     overflow: hidden;
-  }
-  
-  .module p {
+}
+
+.module p {
     margin: 0;
-  }
-  
-  .line-clamp {
+}
+
+.line-clamp {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-  }
+}

@@ -7,7 +7,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 /*------------Context*/
 import { useRecipeCreatedContext } from "../../context/recipeContext";
-import { useUserFunctions } from "../../context/UserContext";
+
 /*------------Ui-CSS*/
 import { Form } from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css';
@@ -25,7 +25,6 @@ const ModalAddRecipe = () => {
 
     const handleClose = () => setShow(false);
     const context = useRecipeCreatedContext();
-    const loggedcontext = useUserFunctions();
     const schema = Yup.object().shape({
 
         title: Yup.string()
