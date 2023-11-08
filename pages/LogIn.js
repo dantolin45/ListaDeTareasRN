@@ -18,22 +18,22 @@ const LogIn = () => {
             .min(8, "La contraseña debe de constar de al menos 8 caracteres"),
 
     });
-    function isLogged(){
-        if(context.Logged === true)
-        {
+    
+    function isLogged() {
+        if (context.Logged === true) {
             alert("Te has logeado")
             navigate("/")
         }
-        else{
-            
+        else {
+
             navigate("/userlogin")
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
         isLogged()
-    },[context.Logged])
-   
-   
+    }, [context.Logged])
+
+
 
     return (
         <>
@@ -77,7 +77,7 @@ const LogIn = () => {
                                             </p>
 
                                             <label> Contraseña: <Field
-                                                
+
                                                 type="password"
                                                 placeholder="Contraseña"
                                                 name="password"
@@ -92,8 +92,8 @@ const LogIn = () => {
                                         </Form>
 
                                     </Formik>
-                                                  
-                                
+
+
                                 </div>
                             </div>
                         </div>
