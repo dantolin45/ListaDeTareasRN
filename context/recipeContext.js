@@ -9,17 +9,16 @@ export const RecipeContext = ({ children }) => {
     const [recipe, setRecipe] = useState(recipes);
 
     const AddRecipe = (values) => {
-
-
-
-
-        const newTask = {
-            id: tasks.length + 1,
-            name :values.title,
+        console.log(values)
+        const newRecipe = {
+            id: values.id,
+            title : values.title,
+            image: values.image,
             description : values.description,
-            image:values.image
+            imageType : "jpg"
         };
-        setTasks([...tasks, newTask]);
+        setRecipe([...recipe, newRecipe]);
+        return recipe 
     };
 
     const RemoveRecipeBySelected = (e) => {
@@ -27,10 +26,16 @@ export const RecipeContext = ({ children }) => {
         const updatedRecipes = recipe.filter((r) => r.id != idSelected);
         setRecipe(updatedRecipes);
     };
+    const SearchRecipe = (e) =>{
+        let searchByUser = e.target.value;
+        const updatedRecipes = recipe.filter((r) => r.title.includes(searchByUser));
+        console.log(updatedRecipes)
+        setRecipe([...updatedRecipes])
+    }
 
 
     return (
-        <recipeFunctions.Provider value={{ AddRecipe, RemoveRecipeBySelected }}>
+        <recipeFunctions.Provider value={{ AddRecipe, RemoveRecipeBySelected, SearchRecipe }}>
             <recipeCreated.Provider value={recipe}>
                 {children}
             </recipeCreated.Provider>

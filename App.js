@@ -21,10 +21,9 @@ export default function App() {
         <View >
 
           <BrowserRouter>
-
-            <Navbar />
-
+          <Navbar />
             <Routes>
+              
               {recipes.map((recipesURL) => {
                 return (<Route path={`/recipeDetail/${recipesURL.title}`} element={<RecipeDetail recipe={recipesURL} />} />)
               })

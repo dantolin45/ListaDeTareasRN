@@ -1,6 +1,5 @@
 import React from "react";
 import '../styles/RecipesDetail.css'
-import { useFormik } from "formik";
 
 const RecipeDetail = (recipeURL) => {
 

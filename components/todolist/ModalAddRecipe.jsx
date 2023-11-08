@@ -42,17 +42,17 @@ const ModalAddRecipe = () => {
     const ids = Math.floor(Math.random() * (80000, 1000000));
 
     const formik = useFormik({
-
-        initialValues: { title: "", image: "", description: "" },
+        initialValues: { id : ids, title: "", image: "", description: "" },
         validationSchema: schema,
         onSubmit: async (values) => {
             await new Promise((r) => setTimeout(r, 500));
             alert(JSON.stringify(values, null, 2));
-            contextfunctions.AddRecipe(values);
+            contextfunctions.AddRecipe(values)
+            setShow(false)
         }
 
     })
-
+    let etj  = {id : formik.values.id, title : formik.values.title, image : formik.values.image, description : formik.values.description}
     return (
         <>
 
@@ -112,7 +112,7 @@ const ModalAddRecipe = () => {
                             {formik.errors.description ? <b className="error-message">{formik.errors.description}</b> : null}
                         </div>
 
-                        <button className="logInButton" type="submit">Añadir Receta</button>
+                        <button className="logInButton"type="submit"  value={etj} onPress={contextfunctions.AddRecipe} >Añadir Receta</button>
                     </Form>
 
 

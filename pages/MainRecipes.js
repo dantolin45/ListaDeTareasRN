@@ -9,7 +9,7 @@ const Main = () => {
     const loggedcontext = useUserFunctions();
     function isLogged() {
         console.log(loggedcontext.Logged)
-        if (loggedcontext.Logged === true) {
+        if (loggedcontext.Logged === false) {
 
             return (<><HaveToLogin /></>)
         }
@@ -19,11 +19,8 @@ const Main = () => {
                 <div className="mainrecipesContainer">
 
                     <div className="todolist-container">
-                        
                         <ModalAddRecipe />
-                        <h1 className="todolist-h1">Remover recetas</h1>
                         <ToDoListRemove />
-                        
                     </div>
 
                 </div>
