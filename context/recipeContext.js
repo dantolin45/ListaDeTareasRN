@@ -8,33 +8,33 @@ export const RecipeContext = ({ children }) => {
 
     const [recipe, setRecipe] = useState(recipes);
 
-    const AddRecipe = (e) => {
-        console.log("AddRecipe", e)
-        if(recipe !== null)
-        {
+    const AddRecipe = (values) => {
 
-            
-        }
-        
-        setRecipe(
-            ...recipe,
-            e)
 
-        console.log("AddRecipe", recipe)
+
+
+        const newTask = {
+            id: tasks.length + 1,
+            name :values.title,
+            description : values.description,
+            image:values.image
+        };
+        setTasks([...tasks, newTask]);
     };
 
     const RemoveRecipeBySelected = (e) => {
-        const idExist = window.localStorage.getItem('idRecipe', e.id)
-        if (idExist != 0) {
-            setRecipe(null);
-        }
+        let idSelected = e.target.value;
+        const updatedRecipes = recipe.filter((r) => r.id != idSelected);
+        setRecipe(updatedRecipes);
     };
+
+
     return (
-        <recipeCreated.Provider value={recipe}>
-            <recipeFunctions.Provider value={{ AddRecipe, RemoveRecipeBySelected }}>
+        <recipeFunctions.Provider value={{ AddRecipe, RemoveRecipeBySelected }}>
+            <recipeCreated.Provider value={recipe}>
                 {children}
-            </recipeFunctions.Provider>
-        </recipeCreated.Provider>
+            </recipeCreated.Provider>
+        </recipeFunctions.Provider>
     )
 };
 

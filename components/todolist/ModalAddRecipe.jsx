@@ -6,7 +6,7 @@ import { View } from "react-native";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 /*------------Context*/
-import { useRecipeCreatedContext } from "../../context/recipeContext";
+import { useRecipeCreatedContext, useRecipeFunctions } from "../../context/recipeContext";
 
 /*------------Ui-CSS*/
 import { Form } from "semantic-ui-react";
@@ -25,6 +25,7 @@ const ModalAddRecipe = () => {
 
     const handleClose = () => setShow(false);
     const context = useRecipeCreatedContext();
+    const contextfunctions = useRecipeFunctions();
     const schema = Yup.object().shape({
 
         title: Yup.string()
@@ -42,12 +43,12 @@ const ModalAddRecipe = () => {
 
     const formik = useFormik({
 
-        initialValues: { id: ids, title: "", image: "", description: "" },
+        initialValues: { title: "", image: "", description: "" },
         validationSchema: schema,
         onSubmit: async (values) => {
             await new Promise((r) => setTimeout(r, 500));
             alert(JSON.stringify(values, null, 2));
-            context.AddRecipe(values);
+            contextfunctions.AddRecipe(values);
         }
 
     })

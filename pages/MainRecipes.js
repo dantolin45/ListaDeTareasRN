@@ -19,13 +19,13 @@ const Main = () => {
                 <div className="mainrecipesContainer">
 
                     <div className="todolist-container">
+                        
+                        <ModalAddRecipe />
                         <h1 className="todolist-h1">Remover recetas</h1>
                         <ToDoListRemove />
+                        
                     </div>
 
-                    <div className="addtask-container">
-                        <ModalAddRecipe />
-                    </div>
                 </div>
             )
 
